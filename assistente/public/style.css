@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    color-scheme: dark only;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #202123;
+    /* Para garantir que o body ocupe a tela inteira e permita flex no container, se quiser */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.4rem 1.2rem;
+    border-radius: 3rem;
+}
+
+.title p {
+    font-size: 1.4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(201, 201, 201);
+    font-weight: 600;
+}
+
+/* Container geral do chat */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y: auto;
+    gap: 10px;
+    background: #202123;
+    padding-bottom: 90px; /* Espaço para input fixo embaixo */
+
+    overflow-y: auto; /* ativa scroll, mas escondemos visualmente */
+    -webkit-overflow-scrolling: touch; /* suavidade no iOS */
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* IE/Edge antigo */
+}
+
+/* Chrome, Safari e outros WebKit: esconde a barra */
+.chat-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mensagens */
+.message {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+}
+
+/* Mensagem do usuário */
+.user {
+    background: #0a84ff;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+/* Mensagem do bot */
+.bot {
+    background: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+/* Input e botão fixos embaixo */
+.input-area {
+    position: fixed;
+    bottom: 0; /* mudou de top para bottom */
+    left: 0;
+    right: 0;
+    background: #202123;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.6); /* sombra para cima */
+    gap: 10px;
+    z-index: 9999;
+}
+
+textarea {
+    flex: 1;
+    min-height: 40px;
+    max-height: 150px;
+    resize: none;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: #303134;
+    color: #e8eaed;
+    font-family: inherit;
+    overflow-y: auto;
+}
+
+button {
+    background-color: #0a84ff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+button:hover {
+    background-color: #006fde;
+}
+
+/* Espaço extra, se usar */
+.spacer {
+    height: 70px;
+    flex-shrink: 0;
+}
+
+
+
+/* ===============================================================================
