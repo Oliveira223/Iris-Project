@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 from fastapi.staticfiles import StaticFiles
 
 #Função criada em documentos.py para ler os arquivos da pasta dados/
-from .documentos import extrair_todos_dados
+from .assistente.backend.documentos import extrair_todos_dados
 
 
 #carrega a chave do openai
